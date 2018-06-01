@@ -14,7 +14,12 @@ namespace aspnet_core_react_spa.Controllers
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
+        /// <summary>
+        /// Gets a list of weather forecasts.
+        /// </summary>
+        [Produces("application/json")]
         [HttpGet("[action]")]
+        [ProducesResponseType(200)]
         public IEnumerable<WeatherForecast> WeatherForecasts()
         {
             var rng = new Random();
